@@ -1,0 +1,142 @@
+/* Fonte personalizada */
+@font-face {
+    font-family: dash;
+    src: url("../fonts/Dash-Horizon-Demo.otf");
+}
+
+
+* {
+    box-sizing: border-box;/* serve para garantir que a largura e a altura de um elemento incluam também as suas margens internas (padding) e bordas*/
+}
+
+
+
+body {
+    margin: 0;/*Zera o espaço externo padrão do navegador*/
+    padding: 30px;/* Cria um espaço interno de 30 pixels entre as bordas da tela e o conteúdo da página.*/
+    background-color: #FDF2D4;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+h1 {
+    font-family: dash;
+    font-size: 50px;/* Define o tamanho do texto*/
+    text-align: center;/*Alinha o título exatamente no centro horizontal da página.*/
+    font-weight: normal;/* Remove o negrito padrão*/
+    color: #0455BF;
+    margin-top: 2px;/*Espaço acima do título*/
+}
+
+
+
+hr {
+    border: none;/*Remove a borda padrão do navegador*/
+    height: 3px;/*Define a espessura da linha*/
+    background-color: #03A60E;
+    margin: 25px 0;/*Cria um espaçamento externo de 25 pixels acima e abaixo da linha, mantendo 0 pixels nas laterais para que ela respire em relação aos outros elementos.*/
+}
+
+
+
+p {
+    max-width: 900px;/*Impedimento de linhas longas*/
+    margin: 15px auto;/*15px de espaço em cima e embaixo e auto nas laterais para centralizar*/
+    font-size: 18px;
+    line-height: 1.6;/*Define o espaçamento entre as linhas do texto*/
+    text-align: center;/*Alinha cada linha do texto dentro do parágrafo no centro.*/
+}
+
+
+.central {
+    display: flex;/*Por padrão, ele coloca todos os elementos filhos um ao lado do outro*/
+    
+    justify-content: center;/* Pega todo esse grupo de elementos e o centraliza horizontalmente na tela.*/
+    
+    gap: 20px;/*Cria um espaçamento automático para os elemento não ficarem juntos*/
+}
+
+
+/*Três imagens*/
+.central img {
+    width: 30%;/*Faz cada imagem ocupar 30% da largura total*/
+    height: 300px;
+    
+    object-fit: cover;/*Ela faz a imagem preencher os 300px de altura sem se distorcer ou esticar*/
+    border-radius: 10px;
+    
+    border: 3px solid #F29F05;/*Adiciona uma borda sólida de 3 pixels com uma cor amarelada*/
+    
+    filter: grayscale(100%);/* Aplica um filtro que deixa as fotos 100% em preto e branco.*/
+    
+    transition: 0.4s;/* Diz ao navegador que qualquer mudança de estilo nessa imagem deve levar 0.4 segundos para acontecer*/
+}
+
+
+/* Efeito ao passar o mouse */
+.central img:hover {
+    filter: grayscale(0%);/* Remove o efeito preto e branco do estado anterior, fazendo a imagem exibir suas cores originais.*/
+
+    transform: scale(1.05);/* Aplica um efeito de zoom, aumentando o tamanho da imagem em 5%.*/
+
+    cursor: pointer;/*Transforma a seta do mouse naquela mãozinha com o dedo indicador*/
+}
+
+
+/* Imagem maior */
+.imgMaior {
+    width: 880px;
+    max-width: 100%;/* Garante que, se a tela do usuário for menor que 880px (como a tela de um celular), a imagem vai encolher proporcionalmente para caber na tela*/
+    height: 400px;
+    object-fit: cover;/*Ela faz a imagem preencher os 400px de altura sem se distorcer ou esticar*/
+    display: block;/*Transforma a imagem em um elemento de bloco.*/
+    margin: 20px auto;/*20px de espaço em cima e embaixo e auto nas laterais para centralizar*/
+    border-radius: 10px;
+    border: 3px solid #0455BF;/*Adiciona uma borda sólida azul de 3 pixels*/
+}
+
+
+/*Responsividade celular*/
+@media (max-width: 700px) {
+
+    h1 {
+        font-size: 45px; /*Diminui levemente o título principal de 50px para 45px, garantindo que o texto grande caiba na tela do celular sem quebrar em várias linhas estranhas.*/
+    }
+
+    .central {
+        flex-direction: column;/*Em vez de exibir as 3 imagens de exemplo lado a lado (em linha), elas passam a ser exibidas uma embaixo da outra (em coluna)*/
+    }
+
+    .central img {
+        /*Faz com que cada uma das 3 imagens ocupe 100% da largura da tela do celular (em vez dos 30% de antes), mantendo uma altura fixa confortável de 300px.*/
+        width: 100%;
+        height: 300px;
+    }
+
+    .imgMaior {
+        /* Ajusta a imagem de destaque para também ocupar 100% da largura disponível, reduzindo a altura dela de 400px para 300px para que ela não ocupe a tela inteira do celular de uma vez.*/
+        width: 100%;
+        height: 300px;
+    }
+
+}
+
+
+/*Responsividade tablet*/
+@media (max-width: 1024px) and (min-width: 700px) {
+
+    .central {
+        flex-direction: column;
+    }
+
+    .central img {
+        width: 100%;
+        height: 250px;
+    }
+
+    .imgMaior {
+        width: 100%;
+        height: 300px;
+    }
+
+}
