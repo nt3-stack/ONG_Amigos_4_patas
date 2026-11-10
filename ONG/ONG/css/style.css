@@ -1,18 +1,18 @@
+
 /* =========================================
-   ONG AMIGOS DE QUATRO PATAS
-   IDENTIDADE VISUAL CYBERPUNK
+   1. FONTE PERSONALIZADA
 ========================================= */
 
-
-/* FONTE PERSONALIZADA */
-
 @font-face {
-    font-family: dash;
-    src: url("../fonts/Dash-Horizon-Demo.otf");
+    font-family: 'Dash';
+    src: url('../fonts/Dash-Horizon-Demo.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-
-/* VARIÁVEIS GLOBAIS */
+/* =========================================
+   2. VARIÁVEIS DE CORES
+========================================= */
 
 :root {
     --cor-fundo: #080B18;
@@ -24,221 +24,171 @@
     --cor-texto: #EAEAFF;
     --cor-texto-secundario: #A8B2D1;
 
-    --cor-borda: #00F0FF;
-    --cor-destaque: #FF00E5;
+    --cor-borda: rgba(0, 240, 255, 0.5);
+    --cor-destaque: rgba(255, 0, 229, 0.2);
 
-    --sombra-ciano: 0 0 10px #00F0FF,
-                    0 0 25px rgba(0, 240, 255, 0.35);
+    --sombra-ciano: 0 0 15px rgba(0, 240, 255, 0.7),
+                    0 0 30px rgba(0, 240, 255, 0.3);
 
-    --sombra-rosa: 0 0 10px #FF00E5,
-                   0 0 25px rgba(255, 0, 229, 0.35);
+    --sombra-rosa: 0 0 15px rgba(255, 0, 229, 0.7),
+                   0 0 30px rgba(255, 0, 229, 0.3);
 }
 
-
-/* CONFIGURAÇÕES GERAIS */
+/* =========================================
+   3. CONFIGURAÇÕES GERAIS
+========================================= */
 
 * {
     box-sizing: border-box;
 }
 
-
 body {
     margin: 0;
     padding: 35px;
 
-    background-color: var(--cor-fundo);
-
-    background-image:
-        radial-gradient(
-            circle at 10% 10%,
-            rgba(255, 0, 229, 0.12),
-            transparent 35%
-        ),
-
-        radial-gradient(
-            circle at 90% 80%,
-            rgba(0, 240, 255, 0.10),
-            transparent 35%
-        );
-
     font-family: Arial, Helvetica, sans-serif;
-
     color: var(--cor-texto);
 
-    overflow-x: hidden;
+    background:
+        radial-gradient(circle at top left, #171044, transparent 40%),
+        radial-gradient(circle at bottom right, #102b42, transparent 40%),
+        var(--cor-fundo);
 }
 
-
-/* TÍTULO PRINCIPAL */
+/* =========================================
+   4. TÍTULO PRINCIPAL
+========================================= */
 
 h1 {
-    font-family: dash, Arial, sans-serif;
-
+    font-family: 'Dash', Arial, sans-serif;
     font-size: 50px;
-
     text-align: center;
-
-    font-weight: normal;
 
     color: var(--cor-primaria);
 
-    margin-top: 10px;
-    margin-bottom: 25px;
-
     text-shadow:
-        0 0 7px var(--cor-primaria),
-        0 0 15px var(--cor-primaria),
-        0 0 30px rgba(255, 0, 229, 0.5);
+        0 0 10px var(--cor-primaria),
+        0 0 25px var(--cor-primaria);
 
-    letter-spacing: 2px;
+    margin-bottom: 30px;
 }
 
-
-/* LINHAS DIVISÓRIAS */
+/* =========================================
+   5. LINHAS HORIZONTAIS
+========================================= */
 
 hr {
-    border: none;
-
     height: 2px;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--cor-secundaria),
-        var(--cor-primaria),
-        var(--cor-secundaria),
-        transparent
-    );
+    border: none;
 
     margin: 30px 0;
 
-    box-shadow: var(--sombra-ciano);
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--cor-secundaria),
+        var(--cor-primaria),
+        transparent
+    );
+
+    box-shadow: 0 0 10px var(--cor-secundaria);
 }
 
-
-/* PARÁGRAFOS */
+/* =========================================
+   6. PARÁGRAFOS
+========================================= */
 
 p {
     max-width: 900px;
 
-    margin: 20px auto;
+    margin: 25px auto;
+    padding: 20px;
 
-    padding: 20px 25px;
-
-    font-size: 18px;
-
+    font-size: 17px;
     line-height: 1.8;
-
-    text-align: center;
+    text-align: justify;
 
     color: var(--cor-texto);
 
-    background-color: rgba(16, 21, 43, 0.75);
+    background: var(--cor-fundo-secundario);
 
     border-left: 3px solid var(--cor-secundaria);
-
     border-right: 3px solid var(--cor-primaria);
 
     border-radius: 8px;
 
-    box-shadow:
-        0 0 12px rgba(0, 240, 255, 0.12),
-        inset 0 0 15px rgba(255, 0, 229, 0.04);
-
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
-
-
-/* EFEITO NOS PARÁGRAFOS */
 
 p:hover {
-    border-left-color: var(--cor-primaria);
+    transform: translateY(-4px);
 
-    border-right-color: var(--cor-secundaria);
-
-    box-shadow: var(--sombra-ciano);
-
-    transform: translateY(-3px);
+    box-shadow:
+        0 0 12px rgba(0, 240, 255, 0.2),
+        0 0 12px rgba(255, 0, 229, 0.2);
 }
 
-
-/* ORGANIZAÇÃO DAS IMAGENS */
+/* =========================================
+   7. CONTAINER DAS IMAGENS
+========================================= */
 
 .central {
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
     gap: 25px;
 
     max-width: 1200px;
-
     margin: 35px auto;
 }
 
-
-/* ESTILIZAÇÃO DAS TRÊS IMAGENS */
+/* =========================================
+   8. IMAGENS LADO A LADO
+========================================= */
 
 .central img {
     width: 30%;
-
     height: 300px;
 
     object-fit: cover;
 
-    border-radius: 10px;
-
     border: 2px solid var(--cor-secundaria);
+    border-radius: 12px;
 
-    box-shadow:
-        0 0 10px rgba(0, 240, 255, 0.5),
-        0 0 20px rgba(0, 240, 255, 0.15);
-
-    filter: saturate(0.8);
+    filter: saturate(1.2);
 
     transition: all 0.4s ease;
 }
 
-
-/* EFEITO HOVER NAS IMAGENS */
-
 .central img:hover {
-
-    filter: saturate(1.5) brightness(1.15);
-
     transform: scale(1.05);
 
     border-color: var(--cor-primaria);
 
-    box-shadow:
-        0 0 12px var(--cor-primaria),
-        0 0 30px rgba(255, 0, 229, 0.5);
-
-    cursor: pointer;
+    box-shadow: var(--sombra-rosa);
 }
 
-
-/* IMAGEM MAIOR */
+/* =========================================
+   9. VÍDEO PRINCIPAL
+========================================= */
 
 .imgMaior {
-
     width: 880px;
-
     max-width: 100%;
-
     height: 400px;
-
-    object-fit: cover;
 
     display: block;
 
     margin: 35px auto;
 
-    border-radius: 12px;
+    object-fit: cover;
+
+    background-color: var(--cor-fundo-secundario);
 
     border: 2px solid var(--cor-primaria);
+    border-radius: 12px;
 
     box-shadow:
         0 0 12px rgba(255, 0, 229, 0.6),
@@ -247,11 +197,7 @@ p:hover {
     transition: all 0.4s ease;
 }
 
-
-/* EFEITO HOVER NA IMAGEM MAIOR */
-
 .imgMaior:hover {
-
     transform: scale(1.02);
 
     border-color: var(--cor-secundaria);
@@ -259,8 +205,9 @@ p:hover {
     box-shadow: var(--sombra-ciano);
 }
 
-
-/* RESPONSIVIDADE - TABLETS */
+/* =========================================
+   10. RESPONSIVIDADE - TABLETS
+========================================= */
 
 @media (max-width: 1024px) {
 
@@ -274,26 +221,22 @@ p:hover {
 
     .central {
         flex-wrap: wrap;
-
-        gap: 20px;
     }
 
     .central img {
         width: 45%;
-
         height: 250px;
     }
 
     .imgMaior {
         width: 100%;
-
         height: 350px;
     }
-
 }
 
-
-/* 12. RESPONSIVIDADE - CELULARES */
+/* =========================================
+   11. RESPONSIVIDADE - CELULARES
+========================================= */
 
 @media (max-width: 700px) {
 
@@ -303,44 +246,31 @@ p:hover {
 
     h1 {
         font-size: 32px;
-
-        line-height: 1.4;
     }
 
     p {
         font-size: 16px;
-
         padding: 15px;
-
-        line-height: 1.7;
     }
 
     .central {
         flex-direction: column;
-
-        gap: 25px;
     }
 
     .central img {
         width: 100%;
-
         height: 280px;
     }
 
     .imgMaior {
         width: 100%;
-
         height: 280px;
     }
-
-    hr {
-        margin: 25px 0;
-    }
-
 }
 
-
-/* 13. CELULARES PEQUENOS */
+/* =========================================
+   12. RESPONSIVIDADE - TELAS PEQUENAS
+========================================= */
 
 @media (max-width: 380px) {
 
@@ -359,5 +289,4 @@ p:hover {
     .imgMaior {
         height: 230px;
     }
-
 }
